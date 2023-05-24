@@ -3,10 +3,10 @@ import { contactSchema, contactSchemaRequest, contactUpdateSchema } from "../sch
 
 type TContact = z.infer<typeof contactSchema>
 type TContactRequest = z.infer<typeof contactSchemaRequest>
-type TClientUpdate = z.infer<typeof contactUpdateSchema>
+type TContactUpdate = z.infer<typeof contactUpdateSchema>
 
 export {
     TContact,
     TContactRequest,
-    TClientUpdate
+    TContactUpdate
 }

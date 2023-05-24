@@ -1,12 +1,18 @@
 import { Router } from "express"
 import { ensureTokenIsValidMiddleware } from "../middlewares/ensureTokenIsValid.middlewares"
-import { createContactController } from "../controllers/contacts.controller"
+import { createContactController, deleteContactController, listContactsController, updateContactController } from "../controllers/contacts.controller"
 import { ensureDataIsValidMiddleware } from "../middlewares/ensureDataIsValid.middlewares"
-import { contactSchemaRequest } from "../schemas/contacts.schemas"
+import { contactSchemaRequest, contactUpdateSchema } from "../schemas/contacts.schemas"
 import { ensureEmailAndTelephoneExistsMiddlewaresContact } from "../middlewares/ensureEmailAndTelephoneExistsContact.middleware"
+import { ensureIdExistsMiddleware } from "../middlewares/ensureIdExists.middleares"
+import { deleteClientController } from "../controllers/client.controllers"
+import { ensureIdContactExistsMiddleware } from "../middlewares/ensureIdContactExists.middlewares"
 
 const contactRouters: Router = Router()
 
 contactRouters.post("", ensureTokenIsValidMiddleware, ensureDataIsValidMiddleware(contactSchemaRequest), ensureEmailAndTelephoneExistsMiddlewaresContact, createContactController)
+contactRouters.get("", ensureTokenIsValidMiddleware, listContactsController)
+contactRouters.patch("/:id", ensureTokenIsValidMiddleware, ensureIdContactExistsMiddleware, ensureDataIsValidMiddleware(contactUpdateSchema), ensureEmailAndTelephoneExistsMiddlewaresContact, updateContactController)
+contactRouters.delete("/:id", ensureTokenIsValidMiddleware, ensureIdContactExistsMiddleware, deleteContactController)
 
 export default contactRouters
