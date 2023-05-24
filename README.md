@@ -25,6 +25,8 @@ Link para imagem do diagrama: https://drive.google.com/file/d/1uxxgOjrmWzaEPioQ8
 
 POST /client
 
+----- CLIENT -----
+
 - ENTRADA -
 {
 	"name": "your name",
