@@ -8,3 +8,13 @@ OU
 npm install
 
 Logo após é preciso criar as váriaveis do ambiente, crie um arquivo .env na raiz seguindo o padrão do .env.example
+
+Com as váriaveis criadas agora é preciso executar as migrations utilize o seguinte comando no terminal:
+yarn typeorm migration:run -- -d src/data-source.ts
+OU
+npm run typeorm migration:run -- -d src/data-source.ts
+
+Agora que está tudo preparado basta executar o servidor com o comando:
+yarn dev
+OU
+npm run dev
