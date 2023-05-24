@@ -4,7 +4,7 @@ import { Client } from "./client.entity"
 @Entity("contact")
 class Contact {
 
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryGeneratedColumn("increment")
     id: number
 
     @Column( { length: 127 } )
