@@ -23,9 +23,9 @@ Link para imagem do diagrama: https://drive.google.com/file/d/1uxxgOjrmWzaEPioQ8
 
 --- Rotas ---
 
-POST /client
-
 ----- CLIENT -----
+
+POST /client
 
 - ENTRADA -
 {
