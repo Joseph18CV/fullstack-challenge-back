@@ -87,3 +87,6 @@ DELETE /client/id - NECESSÁRIO BEARER TOKEN
 - RETORNO -
 204 No Content
 -------------
+
+
+----- CONTACT -----
