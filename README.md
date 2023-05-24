@@ -19,4 +19,4 @@ yarn dev
 OU
 npm run dev
 
-<img src="https://imgur.com/a/xLjqQ0I"/>
+Link para imagem do diagrama: https://drive.google.com/file/d/1uxxgOjrmWzaEPioQ8KmVFmiJrU1OJSOG/view?usp=share_link
