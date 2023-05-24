@@ -4,8 +4,6 @@ import { createContactController, deleteContactController, listContactsControlle
 import { ensureDataIsValidMiddleware } from "../middlewares/ensureDataIsValid.middlewares"
 import { contactSchemaRequest, contactUpdateSchema } from "../schemas/contacts.schemas"
 import { ensureEmailAndTelephoneExistsMiddlewaresContact } from "../middlewares/ensureEmailAndTelephoneExistsContact.middleware"
-import { ensureIdExistsMiddleware } from "../middlewares/ensureIdExists.middleares"
-import { deleteClientController } from "../controllers/client.controllers"
 import { ensureIdContactExistsMiddleware } from "../middlewares/ensureIdContactExists.middlewares"
 
 const contactRouters: Router = Router()
