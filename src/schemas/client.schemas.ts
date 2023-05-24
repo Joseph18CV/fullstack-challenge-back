@@ -4,7 +4,7 @@ const clientSchema = z.object({
     id: z.number(),
     name: z.string().max(127),
     email: z.string().email().max(127),
-    password: z.string().max(13),
+    password: z.string().max(127),
     telephone: z.string().max(13).min(13),
     createdAt: z.string()
 })
@@ -18,8 +18,11 @@ const clientSchemaResponse = clientSchema.omit({
     password: true
 })
 
+const clientUpdateSchema = clientSchemaRequest.partial()
+
 export {
     clientSchema,
     clientSchemaRequest,
-    clientSchemaResponse
+    clientSchemaResponse,
+    clientUpdateSchema
 }
