@@ -6,3 +6,5 @@ Para a instalação abra um terminal e digite o seguinte comando:
 yarn
 OU
 npm install
+
+Logo após é preciso criar as váriaveis do ambiente, crie um arquivo .env na raiz seguindo o padrão do .env.example
