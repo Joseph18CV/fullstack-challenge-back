@@ -54,4 +54,34 @@ POST /login
 	"token": "aski32ik3k23lld..."
 }
 -------------
+GET /client/id - NECESSÁRIO BEARER TOKEN
 
+- RETORNO -
+{
+	"id": 1,
+	"name": "name",
+	"email": "email",
+	"password": "$2a$10$3WwvQJSiEEJQCHlHiMOCA.rb3uppo8ewUyQk5iTX8V5CjLOgGVkkG",
+	"telephone": "phone",
+	"createdAt": "date",
+	"contacts": []
+}
+-------------
+PATCH /client/id - NECESSÁRIO BEARER TOKEN
+
+- ENTRADA -
+{
+	"name": "name 2"
+}
+- RETORNO -
+{
+	"name": "name 2",
+	"email": "email",
+	"password": "$2a$10$TY5tsjIC97tLPWWLsBjrGO598r8VsvTuDgyytwW6RHusUBPQQE8D",
+	"telephone": "phone"
+}
+-------------
+DELETE /client/id - NECESSÁRIO BEARER TOKEN
+- RETORNO -
+204 No Content
+-------------
