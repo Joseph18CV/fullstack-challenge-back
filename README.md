@@ -22,6 +22,7 @@ npm run dev
 Link para imagem do diagrama: https://drive.google.com/file/d/1uxxgOjrmWzaEPioQ8KmVFmiJrU1OJSOG/view?usp=share_link
 
 --- Rotas ---
+
 POST /client
 
 - ENTRADA -
