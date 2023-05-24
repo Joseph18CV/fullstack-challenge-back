@@ -11,6 +11,7 @@
     "reflect-metadata": "^0.1.13",
     "ts-node": "^10.9.1",
     "typeorm": "^0.3.16",
+    "validator": "^13.9.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
