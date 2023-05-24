@@ -18,3 +18,5 @@ Agora que está tudo preparado basta executar o servidor com o comando:
 yarn dev
 OU
 npm run dev
+
+<img src="https://imgur.com/a/xLjqQ0I"/>
