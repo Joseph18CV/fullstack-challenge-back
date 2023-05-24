@@ -20,3 +20,37 @@ OU
 npm run dev
 
 Link para imagem do diagrama: https://drive.google.com/file/d/1uxxgOjrmWzaEPioQ8KmVFmiJrU1OJSOG/view?usp=share_link
+
+--- Rotas ---
+POST /client
+
+- ENTRADA -
+{
+	"name": "your name",
+	"email": "your email",
+	"password": "your password",
+	"telephone": "your phone"
+}
+
+- RETORNO -
+{
+	"id": 1,
+	"name": "your name",
+	"email": "your email",
+	"telephone": "your phone",
+	"createdAt": "date"
+}
+-------------
+POST /login
+
+- ENTRADA -
+{
+	"email": "your email",
+	"password": "your password"
+}
+- RETORNO -
+{
+	"token": "aski32ik3k23lld..."
+}
+-------------
+
