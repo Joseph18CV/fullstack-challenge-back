@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const ensureTokenIsValid_middlewares_1 = require("../middlewares/ensureTokenIsValid.middlewares");
+const contacts_controller_1 = require("../controllers/contacts.controller");
+const ensureDataIsValid_middlewares_1 = require("../middlewares/ensureDataIsValid.middlewares");
+const contacts_schemas_1 = require("../schemas/contacts.schemas");
+const ensureEmailAndTelephoneExistsContact_middleware_1 = require("../middlewares/ensureEmailAndTelephoneExistsContact.middleware");
+const ensureIdContactExists_middlewares_1 = require("../middlewares/ensureIdContactExists.middlewares");
+const contactRouters = (0, express_1.Router)();
+contactRouters.post("", ensureTokenIsValid_middlewares_1.ensureTokenIsValidMiddleware, (0, ensureDataIsValid_middlewares_1.ensureDataIsValidMiddleware)(contacts_schemas_1.contactSchemaRequest), ensureEmailAndTelephoneExistsContact_middleware_1.ensureEmailAndTelephoneExistsMiddlewaresContact, contacts_controller_1.createContactController);
+contactRouters.get("", ensureTokenIsValid_middlewares_1.ensureTokenIsValidMiddleware, contacts_controller_1.listContactsController);
+contactRouters.patch("/:id", ensureTokenIsValid_middlewares_1.ensureTokenIsValidMiddleware, ensureIdContactExists_middlewares_1.ensureIdContactExistsMiddleware, (0, ensureDataIsValid_middlewares_1.ensureDataIsValidMiddleware)(contacts_schemas_1.contactUpdateSchema), ensureEmailAndTelephoneExistsContact_middleware_1.ensureEmailAndTelephoneExistsMiddlewaresContact, contacts_controller_1.updateContactController);
+contactRouters.delete("/:id", ensureTokenIsValid_middlewares_1.ensureTokenIsValidMiddleware, ensureIdContactExists_middlewares_1.ensureIdContactExistsMiddleware, contacts_controller_1.deleteContactController);
+exports.default = contactRouters;
