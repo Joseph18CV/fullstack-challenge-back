@@ -150,3 +150,18 @@ DELETE /contact/id - NECESSÁRIO BEARER TOKEN
 - RETORNO -
 204 No Content
 -------------
+
+Tecnologias e bibliotecas utilizadas:
+- ZOD
+- Express
+- Node
+- TypeScript
+- JSONWEBTOKEN
+- TypeORM
+- JavaScript
+--------------
+Obrigado!
+
+- <a href="https://www.linkedin.com/in/josephvriesman/" target="_blank">LinkedIn</a>
+- <a href="https://github.com/Joseph18CV" target="_blank">GitHub</a>
+- <a href="https://portfolio-joseph-one.vercel.app" target="_blank">Portfólio</a>
