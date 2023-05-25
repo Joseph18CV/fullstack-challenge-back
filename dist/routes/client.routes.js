@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const client_controllers_1 = require("../controllers/client.controllers");
+const ensureDataIsValid_middlewares_1 = require("../middlewares/ensureDataIsValid.middlewares");
+const client_schemas_1 = require("../schemas/client.schemas");
+const ensureEmailAndTelephoneExists_middlawares_1 = require("../middlewares/ensureEmailAndTelephoneExists.middlawares");
+const ensureTokenIsValid_middlewares_1 = require("../middlewares/ensureTokenIsValid.middlewares");
+const ensureIdExists_middleares_1 = require("../middlewares/ensureIdExists.middleares");
+const clientRouters = (0, express_1.Router)();
+clientRouters.post("", (0, ensureDataIsValid_middlewares_1.ensureDataIsValidMiddleware)(client_schemas_1.clientSchemaRequest), ensureEmailAndTelephoneExists_middlawares_1.ensureEmailAndTelephoneExistsMiddlewares, client_controllers_1.createClientController);
+clientRouters.get("/:id", ensureTokenIsValid_middlewares_1.ensureTokenIsValidMiddleware, ensureIdExists_middleares_1.ensureIdExistsMiddleware, client_controllers_1.listClientController);
+clientRouters.patch("/:id", ensureTokenIsValid_middlewares_1.ensureTokenIsValidMiddleware, ensureIdExists_middleares_1.ensureIdExistsMiddleware, (0, ensureDataIsValid_middlewares_1.ensureDataIsValidMiddleware)(client_schemas_1.clientUpdateSchema), ensureEmailAndTelephoneExists_middlawares_1.ensureEmailAndTelephoneExistsMiddlewares, client_controllers_1.updateClientController);
+clientRouters.delete("/:id", ensureTokenIsValid_middlewares_1.ensureTokenIsValidMiddleware, ensureIdExists_middleares_1.ensureIdExistsMiddleware, client_controllers_1.deleteClientController);
+exports.default = clientRouters;
