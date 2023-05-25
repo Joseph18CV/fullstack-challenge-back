@@ -84,9 +84,69 @@ PATCH /client/id - NECESSÁRIO BEARER TOKEN
 }
 -------------
 DELETE /client/id - NECESSÁRIO BEARER TOKEN
+
 - RETORNO -
 204 No Content
 -------------
 
 
 ----- CONTACT -----
+
+POST /contact - NECESSÁRIO BEARER TOKEN
+
+- ENTRADA -
+{
+	"name": "your name",
+	"email": "your email",
+	"telephone": "your phone"
+}
+
+- RETORNO -
+{
+	"id": 1,
+	"name": "your name",
+	"email": "your email",
+	"telephone": "your phone",
+	"createdAt": "date"
+	"client": { "id": 1, "name...}
+}
+-------------
+GET /contact - NECESSÁRIO BEARER TOKEN
+
+- RETORNO -
+[
+	{
+		"id": 1,
+		"name": "name1",
+		"email": "email1",
+		"telephone": "phone1",
+		"createdAt": "date1"
+	}
+	{
+		"id": 2,
+		"name": "name2",
+		"email": "email2",
+		"telephone": "phone2",
+		"createdAt": "date2"
+	}
+]
+-------------
+PATCH /contact/id - NECESSÁRIO BEARER TOKEN
+
+- ENTRADA -
+{
+	"name": "name 2"
+}
+- RETORNO -
+{
+	"name": "name 2",
+	"email": "email1",
+	"password": "$2a$10$TY5tsjIC97tLPWWLsBjrGO598r8VsvTuDgyytwW6RHusUBPQQE8D",
+	"telephone": "phone1"
+}
+-------------
+DELETE /contact/id - NECESSÁRIO BEARER TOKEN
+
+- RETORNO -
+204 No Content
+-------------
