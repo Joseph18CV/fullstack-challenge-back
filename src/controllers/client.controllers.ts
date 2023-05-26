@@ -17,7 +17,7 @@ const createClientController = async (req: Request, res: Response): Promise<Resp
 
 const listClientController = async (req: Request, res: Response): Promise<Response> => {
 
-    const clientId: number = Number(req.params.id)
+    const clientId: number = Number(req.user.id)
 
     const client = await listClientServices(clientId)
 

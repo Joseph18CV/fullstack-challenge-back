@@ -7,7 +7,7 @@ import { iLogin } from "../../interfaces/login.interfaces";
 import "dotenv/config" 
 import { Repository } from "typeorm";
 
-const createLoginServices = async (loginData: iLogin): Promise<string> => {
+const createLoginServices = async (loginData: iLogin): Promise<{}> => {
 
     const clientRepository: Repository<Client> = AppDataSource.getRepository(Client)
 

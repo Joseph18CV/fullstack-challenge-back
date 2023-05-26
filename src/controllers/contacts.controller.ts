@@ -18,9 +18,9 @@ const createContactController = async (req: Request, res: Response): Promise<Res
 
 const listContactsController = async (req: Request, res: Response): Promise<Response> => {
 
-    const contacts = await listContactsServices()
+    const contacts = await listContactsServices(req.user.id)
 
-    return res.json(contacts)
+    return res.status(200).json(contacts)
 
 }
 

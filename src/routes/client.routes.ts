@@ -9,7 +9,7 @@ import { ensureIdExistsMiddleware } from "../middlewares/ensureIdExists.middlear
 const clientRouters: Router = Router()
 
 clientRouters.post("", ensureDataIsValidMiddleware(clientSchemaRequest), ensureEmailAndTelephoneExistsMiddlewares, createClientController)
-clientRouters.get("/:id", ensureTokenIsValidMiddleware, ensureIdExistsMiddleware, listClientController)
+clientRouters.get("", ensureTokenIsValidMiddleware, listClientController)
 clientRouters.patch("/:id", ensureTokenIsValidMiddleware, ensureIdExistsMiddleware, ensureDataIsValidMiddleware(clientUpdateSchema), ensureEmailAndTelephoneExistsMiddlewares, updateClientController)
 clientRouters.delete("/:id", ensureTokenIsValidMiddleware, ensureIdExistsMiddleware, deleteClientController)
 
