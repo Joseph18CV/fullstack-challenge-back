@@ -76,7 +76,7 @@ POST /login
 }
 ```
 -------------
-GET /client/id - NECESSÁRIO BEARER TOKEN
+GET /client - NECESSÁRIO BEARER TOKEN
 
 - RETORNO -
 ```json
