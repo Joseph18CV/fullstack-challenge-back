@@ -12,16 +12,27 @@ const ensureEmailAndTelephoneExistsMiddlewares = async (req: Request, res: Respo
         return next()
     }
 
-    const findEmail = await clientRepository.findBy({
-        email: req.body.email
-    })
+    let findClient;
 
-    const findTelephone = await clientRepository.findBy({
-        telephone: req.body.telephone
-    })
+    if(req.user){
+        findClient = await clientRepository.createQueryBuilder(
+            "client"
+        ).where("client.id != :id AND (client.email = :email OR client.telephone = :telephone)", {
+            id: req.user.id,
+            email: req.body.email,
+            telephone: req.body.telephone
+        }).getOne()
+    }else{
+        findClient = await clientRepository.createQueryBuilder(
+            "client"
+        ).where("client.email = :email OR client.telephone = :telephone", {
+            email: req.body.email,
+            telephone: req.body.telephone
+        }).getOne()
+    }
 
-    if(findEmail.length > 0 || findTelephone.length > 0){
-        throw new AppError("Email and Telephone exists", 409)
+    if(findClient){
+        throw new AppError("Email or Telephone exists", 409)
     }
 
     return next()
